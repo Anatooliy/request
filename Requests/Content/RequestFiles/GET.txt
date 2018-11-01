@@ -1,0 +1,10 @@
+requestType: GET
+ip: ::1
+url: /Home/RequestWriteToFile?get=Submit
+requestType: GET
+ip: ::1
+url: /Home/RequestWriteToFile?get=Submit
+
+requestType: GET
+ip: ::1
+url: /Home/RequestWriteToFile?get=Submit

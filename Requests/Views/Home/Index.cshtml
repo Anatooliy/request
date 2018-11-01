@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="forms-block">
+    <div class="row">
+        <div class="col-md-3">
+            @using (Html.BeginForm("RequestWriteToFile", "Home", FormMethod.Get, new { @class = "form" }))
+            {
+                <button type="submit" class="btn btn-primary" name="get" value="Submit">Get Request</button>
+            }
+        </div>
+
+        <div class="col-md-3">
+            @using (Html.BeginForm("RequestWriteToFile", "Home", FormMethod.Post, new { @class = "form" }))
+            {
+                <button type="submit" class="btn btn-primary" name="get" value="Submit">Post Request</button>
+            }
+        </div>
+
+        <div class="col-md-3">
+            <!-- просчитался по времени - допишу ближе к выходным -->
+        </div>
+
+        <div class="col-md-3">
+            <!-- просчитался по времени - допишу ближе к выходным-->
+        </div>
+    </div>
+</div>
