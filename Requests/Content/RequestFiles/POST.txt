@@ -1,4 +1,0 @@
-
-requestType: POST
-ip: ::1
-url: /Home/RequestWriteToFile

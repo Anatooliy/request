@@ -14,16 +14,17 @@ namespace Requests.Controllers
             return View();
         }
 
-       // [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
+      
         public ActionResult RequestWriteToFile()
-        {
-            string requestType = Request.RequestType;
+        {            
+            //string requestType = Request.RequestType;
+            string requestType = Request.GetHttpMethodOverride();;
             string ip = Request.UserHostAddress; 
             string url = Request.RawUrl;
 
             Writer writer = new Writer(requestType, ip, url);
             writer.WriteToFile();
-
+            
             return View("Index");
         }
        

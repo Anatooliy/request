@@ -6,25 +6,34 @@
 <div class="forms-block">
     <div class="row">
         <div class="col-md-3">
-            @using (Html.BeginForm("RequestWriteToFile", "Home", FormMethod.Get, new { @class = "form" }))
+            @using (Html.BeginForm("RequestWriteToFile", "Home", FormMethod.Get))
             {
                 <button type="submit" class="btn btn-primary" name="get" value="Submit">Get Request</button>
             }
         </div>
 
         <div class="col-md-3">
-            @using (Html.BeginForm("RequestWriteToFile", "Home", FormMethod.Post, new { @class = "form" }))
+            @using (Html.BeginForm("RequestWriteToFile", "Home", FormMethod.Post))
             {
                 <button type="submit" class="btn btn-primary" name="get" value="Submit">Post Request</button>
             }
         </div>
 
         <div class="col-md-3">
-            <!-- просчитался по времени - допишу ближе к выходным -->
+            @using (Html.BeginForm("RequestWriteToFile", "Home"))
+            {
+                @Html.HttpMethodOverride(HttpVerbs.Put)
+                <button type="submit" class="btn btn-primary" name="put" value="Submit">Put Request</button>
+            }
         </div>
 
         <div class="col-md-3">
-            <!-- просчитался по времени - допишу ближе к выходным-->
+            @using (Html.BeginForm("RequestWriteToFile", "Home"))
+            {
+                @Html.HttpMethodOverride(HttpVerbs.Delete)
+                <button type="submit" class="btn btn-primary" name="delete" value="Submit">Delete Request</button>
+            }
         </div>
     </div>
 </div>
+

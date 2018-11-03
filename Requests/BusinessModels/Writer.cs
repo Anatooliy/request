@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Web;
 
 namespace Requests.BusinessModels
@@ -18,8 +19,8 @@ namespace Requests.BusinessModels
 
         public void WriteToFile()
         {
-            string path = HttpContext.Current.Server.MapPath("~/Content/RequestFiles/") + requestType + ".txt";
-            string requestInfo = "\nrequestType: " + requestType + "\n" + "ip: " + ip + "\n" + "url: " + url;
+            string path = HttpContext.Current.Server.MapPath("~/Content/RequestFiles/") + requestType + ".txt"; 
+            string requestInfo = $" {DateTime.Now} \n requestType: {requestType} \n ip: {ip} \n url: {url} \n\n";
 
             using (StreamWriter sw = new StreamWriter(path, true, System.Text.Encoding.Default))
             {
